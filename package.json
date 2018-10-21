@@ -10,7 +10,8 @@
     "test": "mocha",
     "watch": "mocha --watch",
     "repl": "node repl",
-    "install": "node-gyp rebuild"
+    "install": "node-gyp rebuild",
+    "ci": "node-gyp rebuild"
   },
   "devDependencies": {
     "eslint-plugin-mocha": "^5.2.0",
