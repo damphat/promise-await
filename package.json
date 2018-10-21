@@ -5,10 +5,12 @@
   "main": "index.js",
   "author": "Phat <damphat@gmail.com>",
   "license": "MIT",
+  "gypfile": true,
   "scripts": {
     "test": "mocha",
     "watch": "mocha --watch",
-    "repl": "node repl"
+    "repl": "node repl",
+    "install": "node-gyp rebuild"
   },
   "devDependencies": {
     "eslint-plugin-mocha": "^5.2.0",
