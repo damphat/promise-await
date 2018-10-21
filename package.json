@@ -1,0 +1,21 @@
+{
+  "name": "promise-await",
+  "version": "1.0.0",
+  "description": "Inject method promise.await(), convert async to sync function.",
+  "main": "index.js",
+  "author": "Phat <damphat@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha",
+    "watch": "mocha --watch",
+    "repl": "node repl"
+  },
+  "devDependencies": {
+    "eslint-plugin-mocha": "^5.2.0",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "bindings": "~1.3.0",
+    "nan": "^2.11.1"
+  }
+}
