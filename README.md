@@ -1,4 +1,4 @@
-# promise-await (for nodejs, C++ required)
+# promise-await (for nodejs, C++ required) [![Build Status](https://travis-ci.org/damphat/promise-await.svg?branch=master)](https://travis-ci.org/damphat/promise-await)
 
 ## Description
 
