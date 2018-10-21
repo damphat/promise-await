@@ -1,4 +1,4 @@
-const lib = require('./build/Release/lib');
+const lib = require('./build/Release/uvloop');
 
 function log() { }
 

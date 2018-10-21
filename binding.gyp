@@ -1,8 +1,8 @@
 {
   "targets": [{
-    "target_name": "lib",
+    "target_name": "uvloop",
     "sources": [
-      "src/lib.cc"
+      "src/uvloop.cc"
     ],
     "include_dirs": [
       "<!(node -e \"require('nan')\")"
