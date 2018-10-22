@@ -1,6 +1,20 @@
 require('.');
 
-const fs = require('fs').promises;
+async function sleep(ms) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve();
+        }, ms);
+    });
+}
+
+async function print(msg, duration = 1000) {
+    let ms = duration / msg.length;
+    for(let c of msg) {
+        await sleep(ms);
+        process.stdout.write(c);
+    }
+}
 
 var server = require('repl').start({
     prompt: '>',
@@ -8,21 +22,21 @@ var server = require('repl').start({
 });
 
 Object.assign(server.context, {
-    fs,  
+    sleep,
+    print,  
     help: function() {
-      
-        // eslint-disable-next-line no-console
-        console.log(`
-        
-        fs.readdir('missingFolder/').await();   // throw not found
-        
-        fs.readdir('.').await();     // return array
-
-        Promise.resolve(1).await();  // return 1
-
-        Promise.reject("the reason") // throw "the reason"
-
-        `);
+        print('>', 0).await();
+        print('console\b\b\b\b\b\b\bprint(', 2000).await();
+        print('"print char by char in 2000 ms", 2000)\n', 1000).await();
+        sleep(500).await();
+        print('print char by char in 2000 ms\n', 2000).await();
+        print('>', 0).await();
+        sleep(2000).await();
+        print('sleep(1000)  // return a promise\n', 1000).await();
+        print('  [Promise]\n>', 100).await();
+        sleep(1000).await();
+        print('sleep(1000).await()   // block thread\n', 1000).await();
+        sleep(1000).await();
     }
 });
 
